@@ -1,0 +1,48 @@
+/* Set a background color for the page */
+body {
+  background-color: #f0c7c7;
+}
+  /* Style the container for the content */
+.container {
+margin: 50px auto;
+padding: 10px;
+background-color: #bbe6f7;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0,0,0,0.3);
+max-width: 600px;
+text-align: center;
+}
+
+/* Style the heading */
+h1 {
+font-size: 40px;
+font-weight: bold;
+margin-bottom: 20px;
+}
+
+/* Style the paragraph */
+p {
+font-size: 25px;
+line-height: 2;
+margin-bottom: 30px;
+}
+
+/* Style the "Let's Go" button */
+.letsgo-btn {
+  background-color: #e50c0c;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 44px;
+  font-weight: bold;
+  padding: 8px 16px;
+  transition: all 0.3s ease;
+  
+  }
+  
+  /* Style the "Let's Go" button on hover */
+  .letsgo-btn:hover {
+  background-color: #cc0000;
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+  }

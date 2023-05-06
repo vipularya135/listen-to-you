@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      
+      .flowchart-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+      }
+
+      .flowchart-item {
+            width: 300px;
+            height: 100px;
+            background-color: #eee;
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            line-height: 35px;
+            font-size: 30px;
+            border-radius: 55px;
+            box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-in-out;
+            display: flex;
+            justify-content: center;
+}
+
+
+      .flowchart-item:not(:first-child) {
+        margin-top: 50px;
+      }
+
+      .flowchart-item.active {
+        transform: scale(1.6);
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Custom colors for the flowchart items */
+      .flowchart-item:nth-child(1) {
+        background-color: #ffc107;
+      }
+
+      .flowchart-item:nth-child(2) {
+        background-color: #4caf50;
+      }
+
+      .flowchart-item:nth-child(3) {
+        background-color: #2196f3;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flowchart-container">
+      <div class="flowchart-item">Select your language</div>
+      <div class="flowchart-item">Choose your favorite musician</div>
+      <div class="flowchart-item">Decide if you want to listen to an old classic or a new release</div>
+    </div>
+    <script>
+      const items = document.querySelectorAll('.flowchart-item');
+
+      let currentIndex = 0;
+      items[currentIndex].classList.add('active');
+
+      setInterval(() => {
+        items[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % items.length;
+        items[currentIndex].classList.add('active');
+      }, 1500);
+
+    </script>
+  </body>
+</html>

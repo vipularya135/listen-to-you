@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>kannada</title>
+    <style>
+      body {
+  margin: 0;
+  padding: 0;
+  background-color: #070707;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.image-container {
+  display: flex;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 70px;
+  padding: 20px;
+}
+
+.image-box {
+  width: 300px;
+  height: 600px;
+  margin: 10px;
+  border: 3px solid #a3f4c6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: #e2f2f6;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.image-box:hover {
+  border: 1px solid #000;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.image-description {
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  border-top: 3px solid #ccc;
+  background-color: #f0cadc;
+  color: #333;
+  border-radius: 0 0 8px 8px;
+}
+
+.image-description:hover {
+  background-color: #f8f8f8;
+}
+
+.image-box:hover img {
+  transform: rotate(3deg);
+  transition: all 0.2s ease-in-out;
+}
+
+/* Add styles for the link on hover */
+.image-box:hover a {
+  color: #fff;
+  background-color: #000;
+}
+
+/* Add styles for the link */
+.image-box a {
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+}
+
+h3 {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  color: #333;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.5);
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: justify;
+  color: #666;
+  margin-bottom: 0;
+  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="image-container">
+      <div class="image-box" onclick="window.location.href='k1.html'">
+        <img style="width: 300px; height: 250px;" src="eng\aj.webp" alt="Image 1">
+        <div class="image-description"><h3>
+          Arjun Janya
+                </h3>
+        <p>Arjun Janya is an Indian film score soundtrack composer and singer. Arjun made his film debut in the 2006 Kannada film Autograph Please. Since then he has composed and scored music for successful films such as Birugaali, Sanchari, Kempegowda, Varadanayaka, Victory, Vajrakaya.</p></div>
+      </div>
+      <div class="image-box" onclick="window.location.href='k2.html'">
+        <img style="width: 300px; height: 250px;" src="eng/vh.webp"alt="Image 2">
+        <div class="image-description"><h3>V. Harikrishna
+        </h3>
+      <p>V. Harikrishna (born 5 November 1974)[1][2] is an Indian film score and soundtrack composer, playback singer and film producer. He has mainly scored music for Kannada films. Harikrishna made his debut as an independent composer in actor Darshan's first production venture Jothe Jotheyali in 2006. </p></div>
+      </div>
+      <div class="image-box" onclick="window.location.href='k3.html'">
+        <img style="width: 300px; height: 250px;" src="eng/hl.jpg" alt="Image 3">
+        <div class="image-description"><h3>Hamsalekha</h3>
+        <p>Hamsalekha, is an Indian film composer and a songwriter who works in South Indian cinema, predominantly in the Kannada film industry since the late 1980s. He is also a screenplay writer, dialogue writer, instrumentalist and a conductor, composed and written for over 500 music albums.</p></div>
+      </div>
+    </div>
+    <script>
+      const imageBoxes = document.querySelectorAll('.image-box');
+      imageBoxes.forEach((imageBox) => {
+        imageBox.addEventListener('mousedown', () => {
+          imageBox.style.transform = 'scale(4)';
+        });
+        imageBox.addEventListener('mouseup', () => {
+          imageBox.style.transform = 'scale(2)';
+        });
+      });
+    </script>
+ 
+
+  </body>
+</html>

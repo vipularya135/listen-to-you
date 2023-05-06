@@ -1,0 +1,216 @@
+<html>
+<head>
+    <title> vipform </title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #090908;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-top: 50px;
+    color: white;
+    font-size: 4em;
+  }
+  
+  form {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #c5c5c5;
+  }
+  
+  label {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: bolder;
+    color: #065110;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  input[type="email"],
+  input[type="password"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px #c5c5c5;
+  }
+  
+  input[type="radio"],
+  input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  select {
+    height: 40px;
+  }
+  
+  span[id$="-error"] {
+    display: block;
+    margin-top: -20px;
+    margin-bottom: 10px;
+  }
+  
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+  
+  @media screen and (max-width: 600px) {
+    form {
+      margin-top: 50px;
+    }
+  }
+  #error-message {
+    margin-top: 5px;
+    display: block;
+}
+
+#error-message + input {
+    margin-top: 10px;
+}
+
+</style>
+    <script>
+        function validate(event) {
+            event.preventDefault();
+
+            var name = document.getElementById("name").value;
+            var mothername = document.getElementById("mname").value;
+            var gender = document.querySelector('input[name="chk1"]:checked');
+            var age = document.getElementById("age").value;
+            var food = document.getElementById("sel").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("pass").value;
+            var pic = document.getElementById("file").value;
+
+            var valid = true;
+
+            if (name.length <= 2) {
+                document.getElementById("name-error").innerHTML = "Name should be more than 2 characters.";
+                valid = false;
+            } else {
+                document.getElementById("name-error").innerHTML = "";
+            }
+
+            if (mothername.length <= 2) {
+                document.getElementById("mname-error").innerHTML = "Please enter your mother's name.";
+                valid = false;
+            } else {
+                document.getElementById("mname-error").innerHTML = "";
+            }
+
+            if (gender == null) {
+                document.getElementById("gender-error").innerHTML = "Please select your gender.";
+                valid = false;
+            } else {
+                document.getElementById("gender-error").innerHTML = "";
+            }
+
+            if (age == "" || isNaN(age) || age < 18 || age > 100) {
+                document.getElementById("age-error").innerHTML = "Please enter a valid age between 18 and 100.";
+                valid = false;
+            } else {
+                document.getElementById("age-error").innerHTML = "";
+            }
+
+            if (food == "") {
+                document.getElementById("sel-error").innerHTML = "Please select your favorite food.";
+                valid = false;
+            } else {
+                document.getElementById("sel-error").innerHTML = "";
+            }
+
+            if (email == "" || !email.includes("@")) {
+                document.getElementById("email-error").innerHTML = "Please enter a valid email address.";
+                valid = false;
+            } else {
+                document.getElementById("email-error").innerHTML = "";
+            }
+
+            if (password.length < 8) {
+                document.getElementById("pass-error").innerHTML = "Password should be at least 8 characters.";
+                valid = false;
+            } else {
+                document.getElementById("pass-error").innerHTML = "";
+            }
+
+            if (pic == "") {
+                document.getElementById("file-error").innerHTML = "Please upload your picture.";
+                valid = false;
+            } else {
+                document.getElementById("file-error").innerHTML = "";
+            }
+
+            return valid;
+        }
+    </script>
+</head>
+<body>
+    <h1> VIP's FORM</h1>
+    <form name="form" action="" onsubmit="validate(event)">
+        <label>Enter your name:</label>
+        <input type="text" id="name">
+        <span style="color: red;" id="name-error"></span>
+        <br><br>
+        <label>Enter your mother's name:</label>
+        <input type="text" id="mname">
+        <span style="color: red;" id="mname-error"></span>
+        <br><br>
+        <label for="gender">Gender</label>
+        <input type="radio" name="chk1" id="male" value="male">
+        <label for="male">Male</label>
+        <input type="radio" name="chk1" id="female" value="female">
+        <label for="female">Female</label>
+        <span style="color: red;" id="gender-error"></span>
+        
+        <br><br>
+        <label for="age">Age</label>
+        <input type="number" id="age">
+        <span style="color: red;" id="age-error"></span>
+        <br><br>
+        <label for="sel">Favorite Food</label>
+        <select id="sel">
+        <option value="">--Please choose an option--</option>
+        <option value="pizza">Pizza</option>
+        <option value="burger">Burger</option>
+        <option value="taco">Taco</option>
+        </select>
+        <span style="color: red;" id="sel-error"></span>
+        <br><br>
+        <label for="email">Email</label>
+        <input type="text" id="email">
+        <span style="color: red;" id="email-error"></span>
+        <br><br>
+        <label for="pass">Password</label>
+        <input type="password" id="pass">
+        <span style="color: red;" id="pass-error"></span>
+        <br><br>
+        <label for="file">Upload Picture</label>
+        <input type="file" id="file">
+        <span style="color: red;" id="file-error"></span>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

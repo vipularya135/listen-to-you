@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Telugu</title>
+    <style>
+      body {
+  margin: 0;
+  padding: 0;
+  background-color: #070706;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.image-container {
+  display: flex;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 70px;
+  padding: 20px;
+}
+
+.image-box {
+  width: 300px;
+  height: 600px;
+  margin: 10px;
+  border: 3px solid #a3f4c6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: #c7f0f8;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.image-box:hover {
+  border: 1px solid #000;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.image-description {
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  border-top: 3px solid #ccc;
+  background-color: #b6f1c6;
+  color: #333;
+  border-radius: 0 0 8px 8px;
+}
+
+.image-description:hover {
+  background-color: #f8f8f8;
+}
+
+.image-box:hover img {
+  transform: rotate(3deg);
+  transition: all 0.2s ease-in-out;
+}
+
+/* Add styles for the link on hover */
+.image-box:hover a {
+  color: #fff;
+  background-color: #000;
+}
+
+/* Add styles for the link */
+.image-box a {
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+}
+
+h3 {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  color: #333;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.5);
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: justify;
+  color: #666;
+  margin-bottom: 0;
+  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="image-container">
+      <div class="image-box" onclick="window.location.href='t1.html'">
+        <img style="width: 300px; height: 250px;" src="eng/sa.jpg" alt="Image 1">
+        <div class="image-description"><h3>
+            Thaman S           </h3>
+        <p>Thaman is an Indian music composer, professional drummer, and playback singer who predominantly works in Telugu and Tamil films. Thaman entered the film industry as a supporting musician with the Telugu film Bhairava Dweepam in 1994, and later became a film music composer. </p></div>
+      </div>
+      <div class="image-box" onclick="window.location.href='t2.html'">
+        <img style="width: 300px; height: 250px;" src="eng/mm.avif"alt="Image 2">
+        <div class="image-description"><h3>M M Keeravani
+        </h3>
+      <p>Keeravani  predominantly works in Telugu cinema. His accolades include an Academy Award, a Golden Globe Award, a LAFCA Award, a Critics' Choice Movie Award, a National Film Award, eight Filmfare Awards and eleven Nandi Awards. In 2023, the Government of India honoured him with the Padma Shri for his contributions towards Indian cinema. </p></div>
+      </div>
+      <div class="image-box" onclick="window.location.href='t3.html'">
+        <img style="width: 300px; height: 250px;" src="eng/dsp.jpg" alt="Image 3">
+        <div class="image-description"><h3>D S P</h3>
+        <p> DSP is best known for his work in Telugu and Tamil-language films, and has also worked in few Hindi films. He is a recipient of ten Filmfare Awards, nine of which are Best Music Director, Telugu and one Special Award for Best Background Music, five CineMAA Awards,[7][8] seven SIIMA Awards and one Nandi Award. He is one of the highest paid music composers in Tollywood.</p></div>
+      </div>
+    </div>
+    <script>
+      const imageBoxes = document.querySelectorAll('.image-box');
+      imageBoxes.forEach((imageBox) => {
+        imageBox.addEventListener('mousedown', () => {
+          imageBox.style.transform = 'scale(4)';
+        });
+        imageBox.addEventListener('mouseup', () => {
+          imageBox.style.transform = 'scale(2)';
+        });
+      });
+    </script>
+ 
+
+  </body>
+</html>

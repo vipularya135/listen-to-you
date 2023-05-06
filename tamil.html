@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tamil</title>
+    <style>
+      body {
+  margin: 0;
+  padding: 0;
+  background-color: #0a0a0a;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.image-container {
+  display: flex;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 70px;
+  padding: 20px;
+}
+
+.image-box {
+  width: 300px;
+  height: 600px;
+  margin: 10px;
+  border: 3px solid #a3f4c6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: #393232;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.image-box:hover {
+  border: 1px solid #000;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.image-description {
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  border-top: 3px solid #ccc;
+  background-color: #c3eabc;
+  color: #333;
+  border-radius: 0 0 8px 8px;
+}
+
+.image-description:hover {
+  background-color: #f8f8f8;
+}
+
+.image-box:hover img {
+  transform: rotate(3deg);
+  transition: all 0.2s ease-in-out;
+}
+
+/* Add styles for the link on hover */
+.image-box:hover a {
+  color: #fff;
+  background-color: #000;
+}
+
+/* Add styles for the link */
+.image-box a {
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+}
+
+h3 {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  color: #333;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.5);
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: justify;
+  color: #666;
+  margin-bottom: 0;
+  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="image-container">
+      <div class="image-box" onclick="window.location.href='ta1.html'">
+        <img style="width: 300px; height: 250px;" src="eng\ill.webp" alt="Image 1">
+        <div class="image-description"><h3>
+            Ilaiyaraaja            </h3>
+        <p>Ilaiyaraaja is an Indian musician, composer, popular for his works in Tamil and Telugu films. Reputed to be one of the most prolific Indian composers, in a career spanning over forty-five years, he has composed over 7,000 songs and provided film scores for over 1,000 films, apart from performing in over 20,000 concerts</p></div>
+      </div>
+      <div class="image-box" onclick="window.location.href='ta2.html'">
+        <img style="width: 300px; height: 250px;" src="eng/an.webp"alt="Image 2">
+        <div class="image-description"><h3>Anirudh Ravichander
+        </h3>
+      <p>Anirudh Ravichander, also credited mononymously as Anirudh, is an Indian music composer, music producer, singer who works in the Indian film industry, primarily in Tamil films. He has also composed music for various Telugu films. </p></div>
+      </div>
+      <div class="image-box" onclick="window.location.href='ta3.html'">
+        <img style="width: 300px; height: 250px;" src="eng/ar.jpg" alt="Image 3">
+        <div class="image-description"><h3>A. R. Rahman</h3>
+        <p> popular for his works in  Tamil and Hindi films, with occasional forays in international cinema. Rahman is considered one of the most successful and iconic musicians in the world.[2] He is a winner of six National Film Awards, two Academy Awards, two Grammy Awards, a BAFTA Award, a Golden Globe Award, thirty Filmfare Awards   </p></div>
+      </div>
+    </div>
+    <script>
+      const imageBoxes = document.querySelectorAll('.image-box');
+      imageBoxes.forEach((imageBox) => {
+        imageBox.addEventListener('mousedown', () => {
+          imageBox.style.transform = 'scale(4)';
+        });
+        imageBox.addEventListener('mouseup', () => {
+          imageBox.style.transform = 'scale(2)';
+        });
+      });
+    </script>
+ 
+
+  </body>
+</html>

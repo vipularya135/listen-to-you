@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      
+      .flowchart-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin-top: auto;
+        width: max-content;
+        padding: 40px;
+      }
+
+      .flowchart-item {
+        width: 250px;
+        height: 30px;
+        background-color: #eee;
+        margin: 10px;
+        padding: 10px;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        line-height: 30px;
+        font-size: 17px;
+        border-radius: 55px;
+        box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease-in-out;
+        display: flex;
+        justify-content: center;
+      }
+
+      .flowchart-item:not(:first-child) {
+        margin-top: 50px;
+      }
+
+      .flowchart-item.active {
+        transform: scale(1.6);
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Custom colors for the flowchart items */
+      .flowchart-item:nth-child(1) {
+        background-color: #ffc107;
+      }
+
+      .flowchart-item:nth-child(2) {
+        background-color: #4caf50;
+      }
+
+      .flowchart-item:nth-child(3) {
+        background-color: #2196f3;
+        color: #fff;
+      }
+      .flowchart-item:nth-child(4) {
+        background-color: #f321b4;
+        color: #fff;
+      }
+
+      .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+      }
+
+      .button-container  {
+        margin-left: 50px;
+      }
+.but{
+    border: 3px solid rgb(6, 6, 6);
+    border-radius: 55px;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 20px;
+    float: right;
+    height: max-content;
+    font-size: 30px;
+    font-weight: bolder;
+    width: max-content;
+    background-color: red;
+}
+    </style>
+     <link rel="stylesheet" type="text/css" href="style.css">
+     <script src="script.js"></script>
+  </head>
+  <body>
+    <div >
+      <button class="but" id="about" onclick="about()">About Me</button>
+        <button class="but" id="signin" onclick="signin()">Sign In</button>
+    </div>
+    <div class="container">
+      <div class="flowchart-container">
+        <div class="flowchart-item">Select your language</div>
+        <div class="flowchart-item">Choose your favorite musician</div>
+        <div class="flowchart-item">Play the Song</div>
+        <div class="flowchart-item">Be Ready To Dance To The Music</div>
+      </div>
+      <div class="button-container">
+        <button class="letsgo-btn" onclick="gototwoindex()">Click Here</button>
+      </div>
+    </div>
+    <script>
+      const items = document.querySelectorAll('.flowchart-item');
+
+      let currentIndex = 0;
+      items[currentIndex].classList.add('active');
+
+      setInterval(() => {
+        items[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % items.length;
+        items[currentIndex].classList.add('active');
+      }, 1500);
+
+      function gototwoindex() {
+        window.location.href = "2index.html";
+      }
+        function signin() {
+        window.location.href = "signin.html";
+      }
+      function about() {
+        window.location.href = "about.html";
+      }
+    </script>
+  </body>
+</html>
